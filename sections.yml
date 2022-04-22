@@ -1,0 +1,2766 @@
+std:
+- intro.scope #intro 1
+- intro.refs #intro 2
+- intro.defs #intro 3
+- intro: #intro 4
+  - intro.compliance:
+    - intro.compliance.general
+    - intro.abstract
+  - intro.structure
+  - syntax
+- lex: #lex 5
+  - lex.separate
+  - lex.phases
+  - lex.charset
+  - lex.pptoken
+  - lex.digraph
+  - lex.token
+  - lex.comment
+  - lex.header
+  - lex.ppnumber
+  - lex.name
+  - lex.key
+  - lex.operators
+  - lex.literal: #5.13
+    - lex.literal.kinds
+    - lex.icon
+    - lex.ccon
+    - lex.fcon
+    - lex.string
+    - lex.bool
+    - lex.nullptr
+    - lex.ext
+- basic: #basic 6
+  - basic.pre
+  - basic.def
+  - basic.def.odr
+  - basic.scope: #6.4
+    - basic.scope.scope
+    - basic.scope.pdecl
+    - basic.scope.block
+    - basic.scope.param
+    - basic.scope.namespace
+    - basic.scope.class
+    - basic.scope.enum
+    - basic.scope.temp
+  - basic.lookup: #6.5
+    - basic.lookup.general
+    - class.member.lookup
+    - basic.lookup.unqual
+    - basic.lookup.argdep
+    - basic.lookup.qual: #6.5.5
+      - basic.lookup.qual.general
+      - class.qual
+      - namespace.qual
+    - basic.lookup.elab
+    - basic.lookup.udir
+  - basic.link
+  - basic.memobj: #6.7
+    - intro.memory
+    - intro.object
+    - basic.life
+    - basic.indet
+    - basic.stc: #6.7.5
+      - basic.stc.general
+      - basic.stc.static
+      - basic.stc.thread
+      - basic.stc.auto
+      - basic.stc.dynamic:
+        - basic.stc.dynamic.general
+        - basic.stc.dynamic.allocation
+        - basic.stc.dynamic.deallocation
+      - basic.stc.inherit
+    - basic.align
+    - class.temporary
+  - basic.types: #6.8
+    - basic.types.general
+    - basic.fundamental
+    - basic.compound
+    - basic.type.qualifier
+    - conv.rank
+  - basic.exec: #6.9
+    - intro.execution
+    - intro.multithread: #6.9.2
+      - intro.multithread.general
+      - intro.races
+      - intro.progress
+    - basic.start: #6.9.3
+      - basic.start.main
+      - basic.start.static
+      - basic.start.dynamic
+      - basic.start.term
+- expr: #expressions 7
+  - expr.pre #7.1
+  - expr.prop: #7.2
+    - basic.lval
+    - expr.type
+    - expr.context
+  - conv: #7.3
+    - conv.general
+    - conv.lval
+    - conv.array
+    - conv.func
+    - conv.rval
+    - conv.qual
+    - conv.prom
+    - conv.fpprom
+    - conv.integral
+    - conv.double
+    - conv.fpint
+    - conv.ptr
+    - conv.mem
+    - conv.fctptr
+    - conv.bool
+  - expr.arith.conv #7.4
+  - expr.prim: #7.5
+    - expr.prim.literal
+    - expr.prim.this
+    - expr.prim.paren
+    - expr.prim.id: #7.5.4
+      - expr.prim.id.general
+      - expr.prim.id.unqual
+      - expr.prim.id.qual
+      - expr.prim.id.dtor
+    - expr.prim.lambda: #7.5.5
+      - expr.prim.lambda.general
+      - expr.prim.lambda.closure
+      - expr.prim.lambda.capture
+    - expr.prim.fold
+    - expr.prim.req: #7.5.7
+      - expr.prim.req.general
+      - expr.prim.req.simple
+      - expr.prim.req.type
+      - expr.prim.req.compound
+      - expr.prim.req.nested
+  - expr.compound: #7.6
+    - expr.post: #7.6.1
+      - expr.post.general
+      - expr.sub
+      - expr.call
+      - expr.type.conv
+      - expr.ref
+      - expr.post.incr
+      - expr.dynamic.cast
+      - expr.typeid
+      - expr.static.cast
+      - expr.reinterpret.cast
+      - expr.const.cast
+    - expr.unary: #7.6.2
+      - expr.unary.general
+      - expr.unary.op
+      - expr.pre.incr
+      - expr.await
+      - expr.sizeof
+      - expr.alignof
+      - expr.unary.noexcept
+      - expr.new
+      - expr.delete
+    - expr.cast #7.6.3
+    - expr.mptr.oper
+    - expr.mul
+    - expr.add
+    - expr.shift
+    - expr.spaceship
+    - expr.rel
+    - expr.eq
+    - expr.bit.and
+    - expr.xor
+    - expr.or
+    - expr.log.and
+    - expr.log.or
+    - expr.cond
+    - expr.yield
+    - expr.throw
+    - expr.ass
+    - expr.comma #7.6.20
+  - expr.const #7.7
+- stmt.stmt: #statements 8
+  - stmt.pre #8.1
+  - stmt.label #8.2
+  - stmt.expr #8.3
+  - stmt.block #8.4
+  - stmt.select: #8.5
+    - stmt.select.general
+    - stmt.if
+    - stmt.switch
+  - stmt.iter: #8.6
+    - stmt.iter.general
+    - stmt.while
+    - stmt.do
+    - stmt.for
+    - stmt.ranged
+  - stmt.jump: #8.7
+    - stmt.jump.general
+    - stmt.break
+    - stmt.cont
+    - stmt.return
+    - stmt.return.coroutine
+    - stmt.goto
+  - stmt.dcl #8.8
+  - stmt.ambig #8.9
+- dcl.dcl: #declarations 9
+  - dcl.pre
+  - dcl.spec: #9.2
+    - dcl.spec.general
+    - dcl.stc
+    - dcl.fct.spec
+    - dcl.typedef
+    - dcl.friend
+    - dcl.constexpr
+    - dcl.constinit
+    - dcl.inline
+    - dcl.type: #9.2.9
+      - dcl.type.general
+      - dcl.type.cv
+      - dcl.type.simple
+      - dcl.type.elab
+      - dcl.type.decltype
+      - dcl.spec.auto: #9.2.9.6
+        - dcl.spec.auto.general
+        - dcl.type.auto.deduct
+      - dcl.type.class.deduct
+  - dcl.decl: #9.3
+    - dcl.decl.general
+    - dcl.name
+    - dcl.ambig.res
+    - dcl.meaning: #9.3.4
+      - dcl.meaning.general
+      - dcl.ptr
+      - dcl.ref
+      - dcl.mptr
+      - dcl.array
+      - dcl.fct
+      - dcl.fct.default #9.3.4.7
+  - dcl.init: #9.4
+    - dcl.init.general
+    - dcl.init.aggr
+    - dcl.init.string
+    - dcl.init.ref
+    - dcl.init.list
+  - dcl.fct.def: #9.5
+    - dcl.fct.def.general
+    - dcl.fct.def.default
+    - dcl.fct.def.delete
+    - dcl.fct.def.coroutine
+  - dcl.struct.bind #9.6
+  - enum: #9.7
+    - dcl.enum
+    - enum.udecl
+  - basic.namespace: #9.8
+    - basic.namespace.general
+    - namespace.def:
+      - namespace.def.general
+      - namespace.unnamed
+    - namespace.alias
+    - namespace.udir
+  - namespace.udecl #9.9
+  - dcl.asm #9.10
+  - dcl.link #9.11
+  - dcl.attr: #9.12
+    - dcl.attr.grammar
+    - dcl.align
+    - dcl.attr.depend
+    - dcl.attr.deprecated
+    - dcl.attr.fallthrough
+    - dcl.attr.likelihood
+    - dcl.attr.unused
+    - dcl.attr.nodiscard
+    - dcl.attr.noreturn
+    - dcl.attr.nouniqueaddr #9.12.10
+- module: #modules 10
+  - module.unit
+  - module.interface
+  - module.import
+  - module.global.frag
+  - module.private.frag
+  - module.context
+  - module.reach #10.7
+- class: #classes 11
+  - class.pre
+  - class.prop
+  - class.name
+  - class.mem: #11.4
+    - class.mem.general
+    - class.mfct
+    - class.mfct.non-static
+    - special
+    - class.ctor: #11.4.5
+      - class.ctor.general
+      - class.default.ctor
+      - class.copy.ctor
+    - class.copy.assign #11.4.6
+    - class.dtor
+    - class.conv: #11.4.8
+      - class.conv.general
+      - class.conv.ctor
+      - class.conv.fct
+    - class.static: #11.4.9
+      - class.static.general
+      - class.static.mfct
+      - class.static.data
+    - class.bit
+    - class.nest
+  - class.union: #11.5
+    - class.union.general
+    - class.union.anon
+  - class.local
+  - class.derived: #11.7
+    - class.derived.general
+    - class.mi
+    - class.virtual
+    - class.abstract
+  - class.access: #11.8
+    - class.access.general
+    - class.access.spec
+    - class.access.base
+    - class.friend
+    - class.protected
+    - class.access.virt
+    - class.paths
+    - class.access.nest #11.8.8
+  - class.init: #11.9
+    - class.init.general
+    - class.expl.init
+    - class.base.init
+    - class.inhctor.init
+    - class.cdtor
+    - class.copy.elision
+  - class.compare: #11.10
+    - class.compare.default
+    - class.eq
+    - class.spaceship
+    - class.compare.secondary
+  - class.free #11.11
+- over: #overloading 12
+  - over.pre
+  - over.match: #12.2
+    - over.match.general
+    - over.match.funcs: #12.2.2
+      - over.match.funcs.general
+      - over.match.call: #12.2.2.2
+        - over.match.call.general
+        - over.call.func
+        - over.call.object
+      - over.match.oper
+      - over.match.ctor
+      - over.match.copy
+      - over.match.conv
+      - over.match.ref
+      - over.match.list
+      - over.match.class.deduct #12.2.2.9
+    - over.match.viable
+    - over.match.best: #12.2.4
+      - over.match.best.general
+      - over.best.ics: #12.2.4.2
+        - over.best.ics.general
+        - over.ics.scs
+        - over.ics.user
+        - over.ics.ellipsis
+        - over.ics.ref
+        - over.ics.list #12.2.4.2.6
+      - over.ics.rank
+  - over.over
+  - over.oper: #12.4
+    - over.oper.general
+    - over.unary
+    - over.binary: #12.4.3
+      - over.binary.general
+      - over.ass
+    - over.call
+    - over.sub
+    - over.ref
+    - over.inc #12.4.7
+  - over.built
+  - over.literal
+- temp: #templates 13
+  - temp.pre
+  - temp.param
+  - temp.names
+  - temp.arg: #13.4
+    - temp.arg.general
+    - temp.arg.type
+    - type.arg.nontype
+    - type.arg.template
+  - temp.constr: #13.5
+    - temp.constr.general
+    - temp.constr.constr:
+      - temp.constr.constr.general
+      - temp.constr.op
+      - temp.constr.atomic
+    - temp.constr.decl
+    - temp.constr.normal
+    - temp.constr.order
+  - temp.type #13.6
+  - temp.decls: #13.7
+    - temp.decls.general
+    - temp.class: #13.7.2
+      - temp.class.general
+      - temp.mem.func
+      - temp.deduct.guide
+      - temp.mem.class
+      - temp.static
+      - temp.mem.enum
+    - temp.mem
+    - temp.variadic
+    - temp.friend
+    - temp.spec.partial: #13.7.6
+      - temp.spec.partial.general
+      - temp.spec.partial.match
+      - temp.spec.partial.order
+      - temp.spec.partial.member
+    - temp.fct: #13.7.7
+      - temp.fct.general
+      - temp.over.link
+      - temp.func.order
+    - temp.alias
+    - temp.concept
+  - temp.res: #13.8
+    - temp.res.general
+    - temp.local
+    - temp.dep: #13.8.3
+      - temp.dep.general
+      - temp.dep.type
+      - temp.dep.expr
+      - temp.dep.constexpr
+      - temp.dep.temp
+    - temp.dep.res: #13.8.4
+      - temp.point
+      - temp.dep.candidate
+  - temp.spec: #13.9
+    - temp.spec.general
+    - temp.inst
+    - temp.explicit
+    - temp.expl.spec
+  - temp.fct.spec: #13.10
+    - temp.fct.spec.general
+    - temp.arg.explicit
+    - temp.deduct: #13.10.3
+      - temp.deduct.general
+      - temp.deduct.call
+      - temp.deduct.funcaddr
+      - temp.deduct.conv
+      - temp.deduct.partial
+      - temp.deduct.type
+      - temp.deduct.decl
+    - temp.over
+- except: #exceptions 14
+  - except.pre
+  - except.throw
+  - except.ctor
+  - except.handle
+  - except.spec
+  - except.special: #14.6
+    - except.special.general
+    - except.terminate
+    - except.uncaught
+- cpp: #preprocessor 15
+  - cpp.pre
+  - cpp.cond
+  - cpp.include
+  - cpp.module
+  - cpp.import
+  - cpp.replace: #15.6
+    - cpp.replace.general
+    - cpp.subst
+    - cpp.stringize
+    - cpp.concat
+    - cpp.rescan
+    - cpp.scope
+  - cpp.line
+  - cpp.error
+  - cpp.pragma
+  - cpp.null
+  - cpp.predefined
+  - cpp.pragma.op #15.12
+- library: #lib-intro 16
+  - library.general
+  - library.c
+  - description: #16.3
+    - description.general
+    - structure: #16.3.2
+      - structure.elements
+      - structure.summary
+      - structure.requirements
+      - structure.specifications
+      - structure.see.also
+    - conventions: #16.3.3
+      - conventions.general
+      - expos.only.func
+      - type.descriptions: #16.3.3.3
+        - type.descriptions.general
+        - expos.only.types
+        - enumerated.types
+        - bitmask.types
+        - character.seq: #16.3.3.3.5
+          - character.seq.general
+          - byte.strings
+          - multibyte.strings
+        - customization.point.object
+      - functions.within.classes
+      - objects.within.classes
+  - requirements: #16.4
+    - requirements.general
+    - organization: #16.4.2
+      - organization.general
+      - contents
+      - headers
+      - compliance
+    - using: #16.4.3
+      - using.overview
+      - using.headers
+      - using.linkage
+    - utility.requirements: #16.4.4
+      - utility.requirements.general
+      - utility.arg.requirements
+      - swappable.requirements
+      - nullablepointer.requirements
+      - hash.requirements
+      - allocator.requirements: #16.4.4.6
+        - allocator.requirements.general
+        - allocator.requirements.completeness
+    - constraints: #16.4.5
+      - constraints.overview
+      - namespace.constraints: #16.4.5.2
+        - namespace.std
+        - namespace.posix
+        - namespace.future
+      - reserved.names: #16.4.5.3
+        - reserved.names.general
+        - zombie.names
+        - macro.names
+        - extern.names
+        - extern.types
+        - usrlit.suffix
+      - alt.headers #16.4.5.4
+      - derived.classes
+      - replacement.functions
+      - handler.functions
+      - res.on.functions
+      - res.on.arguments
+      - res.on.objects
+      - res.on.requirements #16.4.5.11
+    - conforming: #16.4.6
+      - conforming.overview
+      - res.on.headers
+      - res.on.macro.definitions
+      - global.functions
+      - member.functions
+      - hidden.friends #16.4.6.6
+      - constexpr.functions
+      - algorithm.stable
+      - reentrancy
+      - res.on.data.races
+      - protection.within.classes
+      - derivation
+      - res.on.exception.handling
+      - value.error.codes
+      - lib.types.movedfrom #16.4.6.15
+- support: #support 17
+  - support.general
+  - support.types:
+    - cstddef.syn
+    - cstdlib.syn
+    - support.types.nullptr
+    - support.types.layout
+    - support.types.byteops
+  - support.limits: #17.3
+    - support.limits.general
+    - version.syn
+    - limits.syn
+    - fp.style: #17.3.4
+      - round.style
+      - denorm.style
+    - numeric.limits: #17.3.5
+      - numeric.limits.general
+      - numeric.limits.members
+      - numeric.special
+    - climits.syn
+    - cfloat.syn
+  - cstdint: #17.4
+    - cstdint.general
+    - cstdint.syn
+  - support.start.term #17.5
+  - support.dynamic: #17.6
+    - support.dynamic.general
+    - new.syn
+    - new.delete: #17.6.3
+      - new.delete.general
+      - new.delete.single
+      - new.delete.array
+      - new.delete.placement
+      - new.delete.dataraces
+    - alloc.errors: #17.6.4
+      - bad.alloc
+      - new.badlength
+      - new.handler
+      - set.new.handler
+      - get.new.handler
+    - ptr.launder
+    - hardware.interference
+  - support.rtti: #17.7
+    - support.rtti.general
+    - typeinfo.syn
+    - type.info
+    - bad.cast
+    - bad.typeid
+  - support.srcloc: #17.8
+    - source.location.syn
+    - support.srcloc.class: #17.8.2
+      - support.srcloc.class.general
+      - support.srcloc.cons
+      - support.srcloc.obs
+  - support.exception: #17.9
+    - support.exception.general
+    - exception.syn
+    - exception #17.9.3
+    - bad.exception
+    - exception.terminate: #17.9.5
+      - terminate.handler
+      - set.terminate
+      - get.terminate
+      - terminate
+    - uncaught.exceptions
+    - propagation
+    - except.nested
+  - support.initlist: #17.10
+    - support.initlist.general
+    - initializer.list.syn
+    - support.initlist.cons
+    - support.initlist.access
+    - support.initlist.range
+  - cmp: #17.11
+    - compare.syn
+    - cmp.categories: #17.11.2
+      - cmp.categories.pre
+      - cmp.partialord
+      - cmp.weakord
+      - cmp.strongord
+    - cmp.common
+    - cmp.concept
+    - cmp.result
+    - cmp.alg
+  - support.coroutine: #17.12
+    - support.coroutine.general
+    - coroutine.syn
+    - coroutine.traits: #17.12.3
+      - coroutine.traits.general
+      - coroutine.traits.primary
+    - coroutine.handle: #17.12.4
+      - coroutine.handle.general
+      - coroutine.handle.con
+      - coroutine.handle.conv
+      - coroutine.handle.export.import
+      - coroutine.handle.observers
+      - coroutine.handle.resumption
+      - coroutine.handle.promise
+      - coroutine.handle.compare
+      - coroutine.handle.hash #17.12.4.9
+    - coroutine.noop: #17.12.5
+      - coroutine.promise.noop
+      - coroutine.handle.noop: #17.12.5.2
+        - coroutine.handle.noop.conv
+        - coroutine.handle.noop.observers
+        - coroutine.handle.noop.resumption
+        - coroutine.handle.noop.promise
+        - coroutine.handle.noop.address
+      - coroutine.noop.coroutine
+    - coroutine.trivial.awaitables #17.12.6
+  - support.runtime: #17.13
+    - support.runtime.general
+    - cstdarg.syn
+    - csetjmp.syn
+    - csignal.syn
+    - support.signal
+- concepts: #concepts 18
+  - concepts.general
+  - concepts.equality
+  - concepts.syn
+  - concepts.lang: #18.4
+    - concepts.lang.general
+    - concept.same
+    - concept.derived
+    - concept.convertible
+    - concept.commonref
+    - concept.common
+    - concepts.arithmetic
+    - concept.assignable
+    - concept.swappable
+    - concept.destructible
+    - concept.constructible
+    - concept.default.init
+    - concept.moveconstructible
+    - concept.copyconstructible #18.4.14
+  - concepts.compare: #18.5
+    - concepts.compare.general
+    - concept.booleantestable
+    - concept.equalitycomparable
+    - concept.totallyordered
+  - concepts.object
+  - concepts.callable: #18.7
+    - concepts.callable.general
+    - concept.invocable
+    - concept.regularinvocable
+    - concept.predicate
+    - concept.relation
+    - concept.equiv
+    - concept.strictweakorder #18.7.7
+- diagnostics: #diagnostics 19
+  - diagnostics.general
+  - std.exceptions: #19.2
+    - std.exceptions.general
+    - stdexcept.syn
+    - logic.error
+    - domain.error
+    - invalid.argument
+    - length.error
+    - out.of.range
+    - runtime.error
+    - range.error
+    - overflow.error
+    - underflow.error #19.2.11
+  - assertions: #19.3
+    - assertions.general
+    - cassert.syn
+    - assertions.assert
+  - errno: #19.4
+    - errno.general
+    - cerrno.syn
+  - syserr: #19.5
+    - syserr.general
+    - system.error.syn
+    - syserr.errcat: #19.5.3
+      - syserr.errcat.overview
+      - syserr.errcat.virtuals
+      - syserr.errcat.nonvirtuals
+      - syserr.errcat.derived
+      - syserr.errcat.objects
+    - syserr.errcode: #19.5.4
+      - syserr.errcode.overview
+      - syserr.errcode.constructors
+      - syserr.errcode.modifiers
+      - syserr.errcode.observers
+      - syserr.errcode.nonmembers
+    - syserr.errcondition: #19.5.5
+      - syserr.errcondition.overview
+      - syserr.errcondition.constructors
+      - syserr.errcondition.modifiers
+      - syserr.errcondition.observers
+      - syserr.errcondition.nonmembers
+    - syserr.compare #19.5.6
+    - syserr.hash
+    - syserr.syserr: #19.5.8
+      - syserr.syserr.overview
+      - syserr.syserr.members
+- utilities: #utilities 20
+  - utilities.general
+  - utility: #20.2
+    - utility.syn
+    - utility.swap
+    - utility.exchange
+    - forward
+    - utility.as.const
+    - declval
+    - utility.intcmp
+    - utility.underlying #20.2.8
+  - intseq: #20.3
+    - intseq.general
+    - intseq.intseq
+    - intseq.make
+  - pairs: #20.4
+    - pairs.general
+    - pairs.pair
+    - pairs.spec
+    - pair.astuple
+    - pair.piecewise
+  - tuple: #20.5
+    - tuple.general
+    - tuple.syn
+    - tuple.tuple: #20.5.3
+      - tuple.cnstr
+      - tuple.assign
+      - tuple.swap
+    - tuple.creation
+    - tuple.apply
+    - tuple.helper
+    - tuple.elem
+    - tuple.rel
+    - tuple.traits
+    - tuple.special #20.5.10
+  - optional: #20.6
+    - optional.general
+    - optional.syn
+    - optional.optional: #20.6.3
+      - optional.optional.general
+      - optional.ctor
+      - optional.dtor
+      - optional.assign
+      - optional.swap
+      - optional.observe
+      - optional.mod #20.6.3.7
+    - optional.nullopt
+    - optional.bad.access
+    - optional.relops
+    - optional.nullops
+    - optional.comp.with.t
+    - optional.specalg
+    - optional.hash #20.6.10
+  - variant: #20.7
+    - variant.general
+    - variant.syn
+    - variant.variant: #20.7.3
+      - variant.variant.general
+      - variant.ctor
+      - variant.dtor
+      - variant.assign
+      - variant.mod
+      - variant.status
+      - variant.swap #20.7.3.7
+    - variant.helper
+    - variant.get
+    - variant.relops
+    - variant.visit
+    - variant.monostate
+    - variant.monostate.relops
+    - variant.specalg
+    - variant.bad.access
+    - variant.hash #20.7.12
+  - any: #20.8
+    - any.general
+    - any.synop
+    - any.bad.any.cast
+    - any.class: #20.8.4
+      - any.class.general
+      - any.cons
+      - any.assign
+      - any.modifiers
+      - any.observers
+    - any.nonmembers
+  - bitset: #20.9
+    - bitset.syn
+    - template.bitset: #20.9.2
+      - template.bitset.general
+      - bitset.cons
+      - bitset.members
+    - bitset.hash
+    - bitset.operators
+  - memory: #20.10
+    - memory.general
+    - memory.syn
+    - pointer.traits: #20.10.3
+      - pointer.traits.general
+      - pointer.traits.types
+      - pointer.traits.functions
+      - pointer.traits.optmem
+    - pointer.conversion
+    - ptr.align
+    - allocator.tag
+    - allocator.uses: #20.10.7
+      - allocator.uses.trait
+      - allocator.uses.construction
+    - allocator.traits: #20.10.8
+      - allocator.traits.general
+      - allocator.traits.types
+      - allocator.traits.members
+      - allocator.traits.other
+    - default.allocator: #20.10.9
+      - default.allocator.general
+      - allocator.members
+      - allocator.globals
+    - specialized.addressof #20.10.10
+    - c.malloc
+  - smartptr: #20.11
+    - unique.ptr: #20.11.1
+      - unique.ptr.general
+      - unique.ptr.dltr: #20.11.1.2
+        - unique.ptr.dltr.general
+        - unique.ptr.dltr.dflt
+        - unique.ptr.dltr.dflt1
+      - unique.ptr.single: #20.11.1.3
+        - unique.ptr.single.general
+        - unique.ptr.single.ctor
+        - unique.ptr.single.dtor
+        - unique.ptr.single.asgn
+        - unique.ptr.single.observers
+        - unique.ptr.single.modifiers
+      - unique.ptr.runtime: #20.11.1.4
+        - unique.ptr.runtime.general
+        - unique.ptr.runtime.ctor
+        - unique.ptr.runtime.asgn
+        - unique.ptr.runtime.observers
+        - unique.ptr.runtime.modifiers
+      - unique.ptr.create
+      - unique.ptr.special
+      - unique.ptr.io
+    - util.smartptr.weak.bad
+    - util.smartptr.shared: #20.11.3
+      - util.smartptr.shared.general
+      - util.smartptr.shared.const
+      - util.smartptr.shared.dest
+      - util.smartptr.shared.assign
+      - util.smartptr.shared.mod
+      - util.smartptr.shared.obs
+      - util.smartptr.shared.create
+      - util.smartptr.shared.cmp
+      - util.smartptr.shared.spec
+      - util.smartptr.shared.cast
+      - util.smartptr.getdeleter
+      - util.smartptr.shared.io #20.11.3.12
+    - util.smartptr.weak: #20.11.4
+      - util.smartptr.weak.general
+      - util.smartptr.weak.const
+      - util.smartptr.weak.dest
+      - util.smartptr.weak.assign
+      - util.smartptr.weak.mod
+      - util.smartptr.weak.obs
+      - util.smartptr.weak.spec #20.11.4.7
+    - util.smartptr.ownerless
+    - util.smartptr.enab
+    - util.smartptr.hash
+    - out.ptr.t
+    - out.ptr
+    - inout.ptr.t
+    - inout.ptr #20.11.11
+  - mem.res: #20.12
+    - mem.res.syn
+    - mem.res.class: #20.12.2
+      - mem.res.class.general
+      - mem.res.public
+      - mem.res.private
+      - mem.res.eq
+    - mem.poly.allocator.class: #20.12.3
+      - mem.poly.allocator.class.general
+      - mem.poly.allocator.ctor
+      - mem.poly.allocator.mem
+      - mem.poly.allocator.eq
+    - mem.res.global
+    - mem.res.pool: #20.12.5
+      - mem.res.pool.overview
+      - mem.res.pool.options
+      - mem.res.pool.ctor
+      - mem.res.pool.mem
+    - mem.res.monotonic.buffer: #20.12.6
+      - mem.res.monotonic.buffer.general
+      - mem.res.monotonic.buffer.ctor
+      - mem.res.monotonic.buffer.mem
+  - allocator.adaptor: #20.13
+    - allocator.adaptor.syn
+    - allocator.adaptor.types
+    - allocator.adaptor.cnstr
+    - allocator.adaptor.members
+    - scoped.adaptor.operators
+  - function.objects: #20.14
+    - function.objects.general
+    - functional.syn
+    - func.def
+    - func.require
+    - func.invoke
+    - refwrap: #20.14.6
+      - refwrap.general
+      - refwrap.const
+      - refwrap.assign
+      - refwrap.access
+      - refwrap.invoke
+      - refwrap.helpers
+    - arithmetic.operations: #20.14.7
+      - arithmetic.operations.general
+      - arithmetic.operations.plus
+      - arithmetic.operations.minus
+      - arithmetic.operations.multiplies
+      - arithmetic.operations.divides
+      - arithmetic.operations.modulus
+      - arithmetic.operations.negate
+    - comparisons: #20.14.8
+      - comparisons.general
+      - comparisons.equal.to
+      - comparisons.not.equal.to
+      - comparisons.greater
+      - comparisons.less
+      - comparisons.greater.equal
+      - comparisons.less.equal
+      - comparisons.three.way
+    - range.cmp
+    - logical.operations: #20.14.10
+      - logical.operations.general
+      - logical.operations.and
+      - logical.operations.or
+      - logical.operations.not
+    - bitwise.operations: #20.14.11
+      - bitwise.operations.general
+      - bitwise.operations.and
+      - bitwise.operations.or
+      - bitwise.operations.xor
+      - bitwise.operations.not
+    - func.identity
+    - func.not.fn
+    - func.bind.front
+    - func.bind: #20.14.15
+      - func.bind.general
+      - func.bind.isbind
+      - func.bind.isplace
+      - func.bind.bind
+      - func.bind.place
+    - func.memfn #20.14.16
+    - func.wrap: #20.14.17
+      - func.wrap.general
+      - func.wrap.badcall
+      - func.wrap.func: #20.14.17.3
+        - func.wrap.func.general
+        - func.wrap.func.con
+        - func.wrap.func.mod
+        - func.wrap.func.cap
+        - func.wrap.func.inv
+        - func.wrap.func.targ
+        - func.wrap.func.nullptr
+        - func.wrap.func.alg
+    - func.search: #20.14.18
+      - func.search.general
+      - func.search.default
+      - func.search.bm
+      - func.search.bmh
+    - unord.hash: #20.14.19
+  - meta: #20.15
+    - meta.general
+    - meta.rqmts
+    - meta.type.synop
+    - meta.help
+    - meta.unary: #20.15.5
+      - meta.unary.general
+      - meta.unary.cat
+      - meta.unary.comp
+      - meta.unary.prop
+    - meta.unary.prop.query #20.15.6
+    - meta.rel
+    - meta.trans: #20.15.8
+      - meta.trans.general
+      - meta.trans.cv
+      - meta.trans.ref
+      - meta.trans.sign
+      - meta.trans.arr
+      - meta.trans.ptr
+      - meta.trans.other
+    - meta.logical #20.15.9
+    - meta.member
+    - meta.const.eval
+  - ratio: #20.16
+    - ratio.general
+    - ratio.syn
+    - ratio.ratio
+    - ratio.arithmetic
+    - ratio.comparison
+    - ratio.si
+  - type.index: #20.17
+    - type.index.synopsis
+    - type.index.overview
+    - type.index.members
+    - type.index.hash
+  - execpol: #20.18
+    - execpol.general
+    - execution.syn
+    - execpol.type
+    - execpol.seq
+    - execpol.par
+    - execpol.parunseq
+    - execpol.unseq
+    - execpol.objects
+  - charconv: #20.19
+    - charconv.syn
+    - charconv.to.chars
+    - charconv.from.chars
+  - format: #20.20
+    - format.syn
+    - format.string: #20.20.2
+      - format.string.general
+      - format.string.std
+    - format.err.report
+    - format.fmt.string
+    - format.functions
+    - format.formatter: #20.20.6
+      - formatter.requirements
+      - format.formatter.spec
+      - format.parse.ctx
+      - format.context
+    - format.arguments: #20.20.7
+      - format.arg
+      - format.arg.store
+      - format.args
+    - format.error
+  - stacktrace: #20.21
+    - stacktrace.general
+    - stacktrace.syn
+    - stacktrace.entry: #20.21.3
+      - stacktrace.entry.overview
+      - stacktrace.entry.ctor
+      - stacktrace.entry.obs
+      - stacktrace.entry.query
+      - stacktrace.entry.cmp
+    - stacktrace.basic: #20.21.4
+      - stacktrace.basic.overview
+      - stacktrace.basic.ctor
+      - stacktrace.basic.obs
+      - stacktrace.basic.cmp
+      - stacktrace.basic.mod
+      - stacktrace.basic.nonmem
+      - stacktrace.basic.hash
+- strings: #strings 21
+  - strings.general
+  - char.traits: #21.2
+    - char.traits.general
+    - char.traits.require
+    - char.traits.typedefs
+    - char.traits.specializations: #21.2.4
+      - char.traits.specializations.general
+      - char.traits.specializations.char
+      - char.traits.specializations.char8.t
+      - char.traits.specializations.char16.t
+      - char.traits.specializations.char32.t
+      - char.traits.specializations.wchar.t
+  - string.classes: #21.3
+    - string.classes.general
+    - string.syn
+    - basic.string: #21.3.3
+      - basic.string.general
+      - string.require
+      - string.cons
+      - string.iterators
+      - string.capacity
+      - string.access
+      - string.modifiers: #21.3.3.7
+        - string.op.append
+        - string.append
+        - string.assign
+        - string.insert
+        - string.erase
+        - string.replace
+        - string.copy
+        - string.swap
+      - string.ops: #21.3.3.8
+        - string.accessors
+        - string.find
+        - string.substr
+        - string.compare
+        - string.starts.with
+        - string.ends.with
+        - string.contains
+    - string.nonmembers: #21.3.4
+      - string.op.plus
+      - string.cmp
+      - string.special
+      - string.io
+      - string.erasure
+    - string.conversions
+    - basic.string.hash
+    - basic.string.literals
+  - string.view: #21.4
+    - string.view.general
+    - string.view.synop
+    - string.view.template: #21.4.3
+      - string.view.template.general
+      - string.view.cons
+      - string.view.iterators
+      - string.view.capacity
+      - string.view.access
+      - string.view.modifiers
+      - string.view.ops
+      - string.view.find
+    - string.view.deduct #21.4.4
+    - string.view.comparison
+    - string.view.io
+    - string.view.hash
+    - string.view.literals
+  - c.strings: #21.5
+    - cctype.syn
+    - cwctype.syn
+    - cstring.syn
+    - cwchar.syn
+    - cuchar.syn
+    - c.mb.wcs
+- containers: #containers 22
+  - containers.general
+  - container.requirements: #22.2
+    - container.requirements.general
+    - container.requirements.dataraces
+    - sequence.reqmts
+    - container.node: #22.2.4
+      - container.node.overview
+      - container.node.cons
+      - container.node.dtor
+      - container.node.observers
+      - container.node.modifiers
+    - container.insert.return
+    - associative.reqmts: #22.2.6
+      - associative.reqmts.general
+      - associative.reqmts.except
+    - unord.req: #22.2.7
+      - unord.req.general
+      - unord.req.except
+  - sequences: #22.3
+    - sequences.general
+    - array.syn
+    - deque.syn
+    - forward.list.syn
+    - list.syn
+    - vector.syn
+    - array: #22.3.7
+      - array.overview
+      - array.cons
+      - array.members
+      - array.special
+      - array.zero
+      - array.creation
+      - array.tuple
+    - deque: #22.3.8
+      - deque.overview
+      - deque.cons
+      - deque.capacity
+      - deque.modifiers
+      - deque.erasure
+    - forward.list: #22.3.9
+      - forward.list.overview
+      - forward.list.cons
+      - forward.list.iter
+      - forward.list.access
+      - forward.list.modifiers
+      - forward.list.ops
+      - forward.list.erasure
+    - list: #22.3.10
+      - list.overview
+      - list.cons
+      - list.capacity
+      - list.modifiers
+      - list.ops
+      - list.erasure
+    - vector: #22.3.11
+      - vector.overview
+      - vector.cons
+      - vector.capacity
+      - vector.data
+      - vector.modifiers
+      - vector.erasure
+    - vector.bool: #22.3.12
+  - associative: #22.4
+    - associative.general
+    - associative.map.syn
+    - associative.set.syn
+    - map: #22.4.4
+      - map.overview
+      - map.cons
+      - map.access
+      - map.modifiers
+      - map.erasure
+    - multimap: #22.4.5
+      - multimap.overview
+      - multimap.cons
+      - multimap.modifiers
+      - multimap.erasure
+    - set: #22.4.6
+      - set.overview
+      - set.cons
+      - set.erasure
+    - multiset: #22.4.7
+      - multiset.overview
+      - multiset.cons
+      - multiset.erasure
+  - unord: #22.5
+    - unord.general
+    - unord.map.syn
+    - unord.set.syn
+    - unord.map: #22.5.4
+      - unord.map.overview
+      - unord.map.cnstr
+      - unord.map.elem
+      - unord.map.modifiers
+      - unord.map.erasure
+    - unord.multimap: #22.5.5
+      - unord.multimap.overview
+      - unord.multimap.cnstr
+      - unord.multimap.modifiers
+      - unord.multimap.erasure
+    - unord.set: #22.5.6
+      - unord.set.overview
+      - unord.set.cnstr
+      - unord.set.erasure
+    - unord.multiset: #22.5.7
+      - unord.multiset.overview
+      - unord.multiset.cnstr
+      - unord.multiset.erasure
+  - container.adaptors: #22.6
+    - container.adaptors.general
+    - queue.syn
+    - stack.syn
+    - queue: #22.6.4
+      - queue.defn
+      - queue.cons
+      - queue.cons.alloc
+      - queue.ops
+      - queue.special
+    - priority.queue: #22.6.5
+      - priqueue.overview
+      - priqueue.cons
+      - priqueue.cons.alloc
+      - priqueue.members
+      - priqueue.special
+    - stack: #22.6.6
+      - stack.general
+      - stack.defn
+      - stack.cons
+      - stack.cons.alloc
+      - stack.ops
+      - stack.special
+  - views: #22.7
+    - vies.general
+    - span.syn
+    - views.span: #22.7.3
+      - span.overview
+      - span.cons
+      - span.deduct
+      - span.sub
+      - span.obs
+      - span.elem
+      - span.iterators
+      - span.objectrep
+- iterators: #iterators 23
+  - iterators.general
+  - iterator.synopsis
+  - iterator.requirements: #23.3
+    - iterator.requirements.general
+    - iterator.assoc.types: #23.3.2
+      - incrementable.traits
+      - readable.traits
+      - iterator.traits
+    - iterator.cust: #23.3.3
+      - iterator.cust.move
+      - iterator.cust.swap
+    - iterator.concepts: #23.3.4
+      - iterator.concepts.general
+      - iterator.concept.readable
+      - iterator.concept.writable
+      - iterator.concept.winc
+      - iterator.concept.inc
+      - iterator.concept.iterator
+      - iterator.concept.sentinel
+      - iterator.concept.sizedsentinel
+      - iterator.concept.input
+      - iterator.concept.output
+      - iterator.concept.forward
+      - iterator.concept.bidir
+      - iterator.concept.random.access
+      - iterator.concept.contiguous #23.3.4.14
+    - iterator.cpp17: #23.3.5
+      - iterator.cpp17.general
+      - iterator.iterators
+      - input.iterators
+      - output.iterators
+      - forward.iterators
+      - bidirectional.iterators
+      - random.access.iterators
+    - indirectcallable: #23.3.6
+      - indirectcallable.general
+      - indirectcallable.indirectinvocable
+      - projected
+    - alg.req: #23.3.7
+      - alg.req.general
+      - alg.req.ind.move
+      - alg.req.ind.copy
+      - alg.req.ind.swap
+      - alg.req.ind.cmp
+      - alg.req.permutable
+      - alg.req.merteable
+      - alg.req.sortable
+  - iterator.primitives: #23.4
+    - iterator.primitives.general
+    - std.iterator.tags
+    - iterator.operations
+    - range.iter.ops: #23.4.4
+      - range.iter.ops.general
+      - range.iter.op.advance
+      - range.iter.op.distance
+      - range.iter.op.next
+      - range.iter.op.prev
+  - predef.iterators: #23.5
+    - reverse.iterators: #23.5.1
+      - reverse.iterators.general
+      - reverse.iterator
+      - reverse.iter.requirements
+      - reverse.iter.cons
+      - reverse.iter.conv
+      - reverse.iter.elem
+      - reverse.iter.nav
+      - reverse.iter.cmp
+      - reverse.iter.nonmember #23.5.1.9
+    - insert.iterators: #23.5.2
+      - insert.iterators.general
+      - back.insert.iterator: #23.5.2.2
+        - back.insert.iter.ops
+        - back.inserter
+      - front.insert.iterator: #23.5.2.3
+        - front.insert.iter.ops
+        - front.inserter
+      - insert.iterator: #23.5.2.4
+        - insert.iter.ops
+        - inserter
+    - move.iterators: #23.5.3
+      - move.iterators.general
+      - move.iterator
+      - move.iter.requirements
+      - move.iter.cons
+      - move.iter.op.conv
+      - move.iter.elem
+      - move.iter.nav
+      - move.iter.op.comp
+      - move.iter.nonmember
+      - move.sentinel
+      - move.sent.ops #23.5.3.11
+    - iterators.common: #23.5.4
+      - common.iterator
+      - common.iter.types
+      - common.iter.const
+      - common.iter.access
+      - common.iter.nav
+      - common.iter.cmp
+      - common.iter.cust
+    - default.sentinel #23.5.5
+    - iterators.counted: #23.5.6
+      - counted.iterator
+      - counted.iter.const
+      - counted.iter.access
+      - counted.iter.elem
+      - counted.iter.nav
+      - counted.iter.cmp
+      - counted.iter.cust
+    - unreachable.sentinel #23.5.7
+  - stream.iterators: #23.6
+    - stream.iterators.general
+    - istream.iterator: #23.6.2
+      - istream.iterator.general
+      - istream.iterator.cons
+      - istream.iterator.ops
+    - ostream.iterator: #23.6.3
+      - ostream.iterator.general
+      - ostream.iterator.cons.des
+      - ostream.iterator.ops
+    - istreambuf.iterator: #23.6.4
+      - istreambuf.iterator.general
+      - istreambuf.iterator.proxy
+      - istreambuf.iterator.cons
+      - istreambuf.iterator.ops
+    - ostreambuf.iterator: #23.6.5
+      - ostreambuf.iterator.general
+      - ostreambuf.iter.cons
+      - ostreambuf.iter.ops
+  - iterator.range #23.7
+- ranges: #ranges 24
+  - ranges.general
+  - ranges.syn
+  - range.access: #24.3
+    - range.access.general
+    - range.access.begin
+    - range.access.end
+    - range.access.cbegin
+    - range.access.cend
+    - range.access.rbegin
+    - range.access.rend
+    - range.access.crbegin
+    - range.access.crend
+    - range.prim.size
+    - range.prim.ssize
+    - range.prim.empty
+    - range.prim.data
+    - range.prim.cdata #24.3.14
+  - range.req: #24.4
+    - range.req.general
+    - range.range
+    - range.sized
+    - range.view
+    - range.refinements
+  - range.utility: #24.5
+    - range.utility.general
+    - range.utility.helpers
+    - view.interface: #24.5.3
+      - view.interface.general
+      - view.interface.members
+    - range.subrange: #24.5.4
+      - range.subrange.general
+      - range.subrange.ctor
+      - range.subrange.access
+  - range.dangling
+  - range.factories: #24.6
+    - range.factories.general
+    - range.empty: #24.6.2
+      - range.empty.overview
+      - range.empty.view
+    - range.single: #24.6.3
+      - range.single.overview
+      - range.single.view
+    - range.iota: #24.6.4
+      - range.iota.overview
+      - range.iota.view
+      - range.iota.iterator
+      - range.iota.sentinel
+    - range.istream: #24.6.5
+      - range.istream.overview
+      - range.istream.view
+      - range.istream.iterator
+  - range.adaptors: #24.7
+    - range.adaptors.general
+    - range.adaptor.object
+    - range.copy.wrap
+    - range.nonprop.cache
+    - range.all: #24.7.5
+      - range.all.general
+      - range.ref.view
+    - range.filter: #24.7.6
+      - range.filter.overview
+      - range.filter.view
+      - range.filter.iterator
+      - range.filter.sentinel
+    - range.transform: #24.7.7
+      - range.transform.overview
+      - range.transform.view
+      - range.transform.iterator
+      - range.transform.sentinel
+    - range.take: #24.7.8
+      - range.take.overview
+      - range.take.view
+      - range.take.sentinel
+    - range.take.while: #24.7.9
+      - range.take.while.overview
+      - range.take.while.view
+      - range.take.while.sentinel
+    - range.drop: #24.7.10
+      - range.drop.overview
+      - range.drop.view
+    - range.drop.while: #24.7.11
+      - range.drop.while.overview
+      - range.drop.while.view
+    - range.join: #24.7.12
+      - range.join.overview
+      - range.join.view
+      - range.join.iterator
+      - range.join.sentinel
+    - range.lazy.split: #24.7.13
+      - range.lazy.split.overview
+      - range.lazy.split.view
+      - range.lazy.split.outer
+      - range.lazy.split.outer.value
+      - range.lazy.split.inner
+    - range.split: #24.7.14
+      - range.split.overview
+      - range.split.view
+      - range.split.iterator
+      - range.split.sentinel
+    - range.counted #24.7.15
+    - range.common: #24.7.16
+      - range.common.overview
+      - range.common.view
+    - range.reverse: #24.7.17
+      - range.reverse.overview
+      - range.reverse.view
+    - range.elements: #24.7.18
+      - range.elements.overview
+      - range.elements.view
+      - range.elements.iterator
+      - range.elements.sentinel
+- algorithms: #algorithms 25
+  - algorithms.general
+  - algorithms.requirements
+  - algorithms.parallel: #25.3
+    - algorithms.parallel.defns
+    - algorithms.parallel.user
+    - algorithms.parallel.exec
+    - algorithms.parallel.exceptions
+    - algorithms.parallel.overloads
+  - algorithm.syn
+  - algorithms.results
+  - alg.nonmodifying: #25.6
+    - alg.all.of
+    - alg.any.of
+    - alg.none.of
+    - alg.foreach
+    - alg.find
+    - alg.find.end
+    - alg.find.first.of
+    - alg.adjacent.find
+    - alg.count
+    - mismatch
+    - alg.equal
+    - alg.is.permutation
+    - alg.search
+    - alg.starts.with
+    - alg.ends.with #25.6.15
+  - alg.modifying.operations: #25.7
+    - alg.copy
+    - alg.move
+    - alg.swap
+    - alg.transform
+    - alg.replace
+    - alg.fill
+    - alg.generate
+    - alg.remove
+    - alg.unique
+    - alg.reverse
+    - alg.rotate
+    - alg.random.sample
+    - alg.random.shuffle
+    - alg.shift #25.7.14
+  - alg.sorting: #25.8
+    - alg.sorting.general
+    - alg.sort: #25.8.2
+      - sort
+      - stable.sort
+      - partial.sort
+      - partial.sort.copy
+      - is.sorted
+    - alg.nth.element
+    - alg.binary.search: #25.8.4
+      - alg.binary.search.general
+      - lower.bound
+      - upper.bound
+      - equal.range
+      - binary.search
+    - alg.partitions #25.8.5
+    - alg.merge
+    - alg.set.operations: #25.8.7
+      - alg.set.operations.general
+      - includes
+      - set.union
+      - set.intersection
+      - set.difference
+      - set.symmetric.difference
+    - alg.heap.operations: #25.8.8
+      - alg.heap.operations.general
+      - push.heap
+      - pop.heap
+      - make.heap
+      - sort.heap
+      - is.heap
+    - alg.min.max
+    - alg.clamp
+    - alg.lex.comparison
+    - alg.three.way
+    - alg.permutation.generators #25.8.13
+  - numeric.ops.overview
+  - numeric.ops: #25.10
+    - numeric.ops.general
+    - numerics.defns
+    - accumulate
+    - reduce
+    - inner.product
+    - transform.reduce
+    - partial.sum
+    - exclusive.scan
+    - inclusive.scan
+    - transform.exclusive.scan
+    - transform.inclusive.scan
+    - adjacent.difference
+    - numeric.iota
+    - numeric.ops.gcd
+    - numeric.ops.lcm
+    - numeric.ops.midpoint #25.10.16
+  - specialized.algorithms: #25.11
+    - specialized.algorithms.general
+    - special.mem.concepts
+    - uninitialized.construct.default
+    - uninitialized.construct.value
+    - uninitialized.copy
+    - uninitialized.move
+    - uninitialized.fill
+    - specialized.construct
+    - specialized.destroy
+  - alg.c.library
+- numerics: #numerics 26
+  - numerics.general
+  - numeric.requirements
+  - cfenv: #26.3
+    - cfenv.syn
+    - cfenv.thread
+  - complex.numbers: #26.4
+    - complex.numbers.general
+    - complex.syn
+    - complex #26.4.3
+    - complex.special
+    - complex.members
+    - complex.member.ops
+    - complex.ops
+    - complex.value.ops
+    - complex.transcendentals
+    - cmplx.over
+    - complex.literals #26.4.11
+  - bit: #26.5
+    - bit.general
+    - bit.syn
+    - bit.cast
+    - bit.pow.two
+    - bit.rotate
+    - bit.count
+    - bit.endian
+  - rand: #26.6
+    - rand.general
+    - rand.synopsis
+    - rand.req: #26.6.3
+      - rand.req.genl
+      - rand.req.seedseq
+      - rand.req.urng
+      - rand.req.eng
+      - rand.req.adapt
+      - rand.req.dist
+    - rand.eng: #26.6.4
+      - rand.eng.general
+      - rand.eng.lcong
+      - rand.eng.mers
+      - rand.eng.sub
+    - rand.adapt: #26.6.5
+      - rand.adapt.general
+      - rand.adapt.disc
+      - rand.adapt.ibits
+      - rand.adapt.shuf
+    - rand.predef #26.6.6
+    - rand.device
+    - rand.util: #26.6.8
+      - rand.util.seedseq
+      - rand.util.canonical
+    - rand.dist: #26.6.9
+      - rand.dist.general
+      - rand.dist.uni: #26.6.9.2
+        - rand.dist.uni.int
+        - rand.dist.uni.real
+      - rand.dist.bern: #26.6.9.3
+        - rand.dist.bern.bernoulli
+        - rand.dist.bern.bin
+        - rand.dist.bern.geo
+        - rand.dist.bern.negbin
+      - rand.dist.pois: #26.6.9.4
+        - rand.dist.pois.poisson
+        - rand.dist.pois.exp
+        - rand.dist.pois.gamma
+        - rand.dist.pois.weibull
+        - rand.dist.pois.extreme
+      - rand.dist.norm: #26.6.9.5
+        - rand.dist.norm.normal
+        - rand.dist.norm.lognormal
+        - rand.dist.norm.chisq
+        - rand.dist.norm.cauchy
+        - rand.dist.norm.f
+        - rand.dist.norm.t
+      - rand.dist.samp: #26.6.9.6
+        - rand.dist.samp.discrete
+        - rand.dist.samp.pconst
+        - rand.dist.samp.plinear
+    - c.math.rand #26.6.10
+  - numarray: #26.7
+    - valarray.syn
+    - template.valarray: #26.7.2
+      - template.valarray.overview
+      - valarray.cons
+      - valarray.assign
+      - valarray.access
+      - valarray.sub
+      - valarray.unary
+      - valarray.cassign
+      - valarray.members
+    - valarray.nonmembers: #26.7.3
+      - valarray.binary
+      - valarray.comparison
+      - valarray.transcend
+      - valarray.special
+    - class.slice: #26.7.4
+      - class.slice.overview
+      - cons.slice
+      - slice.access
+      - slice.ops
+    - template.slice.array: #26.7.5
+      - template.slice.array.overview
+      - slice.arr.assign
+      - slice.arr.comp.assign
+      - slice.arr.fill
+    - class.gslice: #26.7.6
+      - class.gslice.overview
+      - gslice.cons
+      - gslice.access
+    - template.gslice.array: #26.7.7
+      - template.gslice.array.overview
+      - gslice.array.assign
+      - gslice.array.comp.assign
+      - gslice.array.fill
+    - template.mask.array: #26.7.8
+      - template.mask.array.overview
+      - mask.array.assign
+      - mask.array.comp.assign
+      - mask.array.fill
+    - template.indirect.array: #26.7.9
+      - template.indirect.array.overview
+      - indirect.array.assign
+      - indirect.array.comp.assign
+      - indirect.array.fill
+    - valarray.range
+  - c.match: #26.8
+    - cmath.syn
+    - c.math.abs
+    - c.math.hypot3
+    - c.math.lerp
+    - c.math.fpclass
+    - sf.cmath: #26.8.6
+      - sf.cmath.general
+      - sf.cmath.assoc.laguerre
+      - sf.cmath.assoc.legendre
+      - sf.cmath.beta
+      - sf.cmath.comp.ellint.1
+      - sf.cmath.comp.ellint.2
+      - sf.cmath.comp.ellint.3
+      - sf.cmath.cyl.bessel.i
+      - sf.cmath.cyl.bessel.j
+      - sf.cmath.cyl.bessel.k
+      - sf.cmath.cyl.neumann #26.8.6.11
+      - sf.cmath.ellint.1
+      - sf.cmath.ellint.2
+      - sf.cmath.ellint.3
+      - sf.cmath.expint
+      - sf.cmath.hermite
+      - sf.cmath.laguerre
+      - sf.cmath.legendre
+      - sf.cmath.riemann.zeta
+      - sf.cmath.sph.bessel
+      - sf.cmath.sph.legendre
+      - sf.cmath.sph.neumann #26.8.6.22
+  - numbers: #26.9
+    - numbers.syn
+    - math.constants
+- time: #time 27
+  - time.general
+  - time.syn
+  - time.clock.req
+  - time.traits: #27.4
+    - time.traits.is.fp
+    - time.traits.duration.values
+    - time.traits.specializations
+    - time.traits.is.clock
+  - time.duration: #27.5
+    - time.duration.general
+    - time.duration.cons
+    - time.duration.observer
+    - time.duration.arithmetic
+    - time.duration.special
+    - time.duration.nonmember
+    - time.duration.comparisons
+    - time.duration.cast
+    - time.duration.literals
+    - time.duration.alg
+    - time.duration.io #27.5.11
+  - time.point: #27.6
+    - time.point.general
+    - time.point.cons
+    - time.point.observer
+    - time.point.arithmetic
+    - time.point.special
+    - time.point.nonmember
+    - time.point.comparisons
+    - time.point.cast
+  - time.clock: #27.7
+    - time.clock.general
+    - time.clock.system: #27.7.2
+      - time.clock.system.overview
+      - time.clock.system.members
+      - time.clock.system.nonmembers
+    - time.clock.utc: #27.7.3
+      - time.clock.utc.overview
+      - time.clock.utc.members
+      - time.clock.utc.nonmembers
+    - time.clock.tai: #27.7.4
+      - time.clock.tai.overview
+      - time.clock.tai.members
+      - time.clock.tai.nonmembers
+    - time.clock.gps: #27.7.5
+      - time.clock.gps.overview
+      - time.clock.gps.members
+      - time.clock.gps.nonmembers
+    - time.clock.file: #27.7.6
+      - time.clock.file.overview
+      - time.clock.file.members
+      - time.clock.file.nonmembers
+    - time.clock.steady
+    - time.clock.hires
+    - time.clock.local
+    - time.clock.cast: #27.7.10
+      - time.clock.conv
+      - time.clock.cast.id
+      - time.clock.cast.sys.utc
+      - time.clock.cast.sys
+      - time.clock.cast.utc
+      - time.clock.cast.fn
+  - time.cal: #27.8
+    - time.cal.general
+    - time.cal.last
+    - time.cal.day: #27.8.3
+      - time.cal.day.overview
+      - time.cal.day.members
+      - time.cal.day.nonmembers
+    - time.cal.month: #27.8.4
+      - time.cal.month.overview
+      - time.cal.month.members
+      - time.cal.month.nonmembers
+    - time.cal.year: #27.8.5
+      - time.cal.year.overview
+      - time.cal.year.members
+      - time.cal.year.nonmembers
+    - time.cal.wd: #27.8.6
+      - time.cal.wd.overview
+      - time.cal.wd.members
+      - time.cal.wd.nonmembers
+    - time.cal.wdidx: #27.8.7
+      - time.cal.wdidx.overview
+      - time.cal.wdidx.members
+      - time.cal.wdidx.nonmembers
+    - time.cal.wdlast: #27.8.8
+      - time.cal.wdlast.overview
+      - time.cal.wdlast.members
+      - time.cal.wdlast.nonmembers
+    - time.cal.md: #27.8.9
+      - time.cal.md.overview
+      - time.cal.md.members
+      - time.cal.md.nonmembers
+    - time.cal.mdlast: #27.8.10
+    - time.cal.mwd: #27.8.11
+      - time.cal.mwd.overview
+      - time.cal.mwd.members
+      - time.cal.mwd.nonmembers
+    - time.cal.mwdlast: #27.8.12
+      - time.cal.mwdlast.overview
+      - time.cal.mwdlast.members
+      - time.cal.mwdlast.nonmembers
+    - time.cal.ym: #27.8.13
+      - time.cal.ym.overview
+      - time.cal.ym.members
+      - time.cal.ym.nonmembers
+    - time.cal.ymd: #27.8.14
+      - time.cal.ymd.overview
+      - time.cal.ymd.members
+      - time.cal.ymd.nonmembers
+    - time.cal.ymdlast: #27.8.15
+      - time.cal.ymdlast.overview
+      - time.cal.ymdlast.members
+      - time.cal.ymdlast.nonmembers
+    - time.cal.ymwd: #27.8.16
+      - time.cal.ymwd.overview
+      - time.cal.ymwd.members
+      - time.cal.ymwd.nonmembers
+    - time.cal.ymwdlast: #27.8.17
+      - time.cal.ymwdlast.overview
+      - time.cal.ymwdlast.members
+      - time.cal.ymwdlast.nonmembers
+    - time.cal.operators #27.8.18
+  - time.hms: #27.9
+    - time.hms..overview
+    - time.hms..members
+    - time.hms..nonmembers
+  - time.12
+  - time.zone: #27.11
+    - time.zone.general
+    - time.zone.db: #27.11.2
+      - time.zone.db.tzdb
+      - time.zone.db.list
+      - time.zone.db.access
+      - time.znoe.db.remote
+    - time.zone.exception: #27.11.3
+      - time.zone.exception.nonexist
+      - time.zone.exception.ambig
+    - time.zone.info: #27.11.4
+      - time.zone.info.sys
+      - time.zone.info.local
+    - time.zone.timezone: #27.11.5
+      - time.zone.overview
+      - time.zone.members
+      - time.zone.nonmembers
+    - time.zone.zonedtraits
+    - time.zone.zonedtime: #27.11.7
+      - time.zone.zonedtime.overview
+      - time.zone.zonedtime.ctor
+      - time.zone.zonedtime.members
+      - time.zone.zonedtime.nonmembers
+    - time.zone.leap: #27.11.8
+      - time.zone.leap.overview
+      - time.zone.leap.members
+      - time.zone.leap.nonmembers
+    - time.zone.link: #27.11.9
+      - time.zone.link.overview
+      - time.zone.link.members
+      - time.zone.link.nonmembers
+  - time.format #27.12
+  - time.parse
+  - ctime.syn #27.14
+- localization: #locales 28
+  - localization.general
+  - locale.syn
+  - locales: #28.3
+    - locale: #28.3.1
+      - locale.general
+      - locale.types: #28.3.1.2
+        - locale.category
+        - locale.facet
+        - locale.id
+      - locale.cons
+      - locale.members
+      - locale.operators
+      - locale.statics
+    - locale.global.templates
+    - locale.convenience: #28.3.3
+      - classification
+      - conversions.character
+  - locale.categories: #28.4
+    - locale.categories.general
+    - category.ctype: #28.4.2
+      - category.ctype.general
+      - locale.ctype: #28.4.2.2
+        - locale.ctype.general
+        - locale.ctype.members
+        - locale.ctype.virtuals
+      - locale.ctype.byname
+      - facet.ctype.special: #28.4.2.4
+        - facet.ctype.special.general
+        - facet.ctype.char.dtor
+        - facet.ctype.char.members
+        - facet.ctype.char.statistics
+        - facet.ctype.char.virtuals
+      - locale.codecvt: #28.4.2.5
+        - locale.codecvt.general
+        - locale.codecvt.members
+        - locale.codecvt.virtuals
+      - locale.codecvt.byname
+    - category.numeric: #28.4.3
+      - category.numeric.general
+      - locale.num.get: #28.4.3.2
+        - locale.num.get.general
+        - facet.num.get.members
+        - facet.num.get.virtuals
+      - locale.nm.put: #28.4.3.3
+        - locale.nm.put.general
+        - facet.num.put.members
+        - facet.num.put.virtuals
+    - facet.numpunct: #28.4.4
+      - locale.numpunct: #28.4.4.1
+        - locale.numpunct.general
+        - facet.numpunct.members
+        - facet.numpunct.virtuals
+      - locale.numpunct.byname
+    - category.collate: #28.4.5
+      - locale.collate: #28.4.5.1
+        - locale.collate.general
+        - locale.collate.members
+        - locale.collate.virtuals
+      - locale.collate.byname
+    - category.time: #28.4.6
+      - category.time.general
+      - locale.time.get: #28.4.6.2
+        - locale.time.get.general
+        - locale.time.get.members
+        - locale.time.get.virtuals
+      - locale.time.get.byname
+      - locale.time.put: #28.4.6.4
+        - locale.time.put.members
+        - locale.time.put.virtuals
+      - locale.time.put.byname
+    - category.monetary: #28.4.7
+      - category.monetary.general
+      - locale.money.get: #28.4.7.2
+        - locale.money.get.members
+        - locale.money.get.virtuals
+      - locale.money.put: #28.4.7.3
+        - locale.money.put.members
+        - locale.money.put.virtuals
+      - locale.moneypunct: #28.4.7.4
+        - locale.moneypunct.general
+        - locale.moneypunct.members
+        - locale.moneypunct.virtuals
+      - locale.moneypunct.byname
+    - category.messages: #28.4.8
+      - category.messages.general
+      - locale.messages: #28.4.8.2
+        - locale.messages.general
+        - locale.messages.members
+        - locale.messages.virtuals
+      - locale.messages.byname
+  - c.locales: #28.5
+    - clocale.syn
+    - clocale.data.races
+- input.output: #iostreams 29
+  - input.output.general
+  - iostreams.requirements: #29.2
+    - iostream.limits.imbue
+    - iostreams.limits.pos
+    - iostreams.threadsafety
+  - iostream.forward: #29.3
+    - iosfwd.syn
+    - iostream.forward.overview
+  - iostream.objects: #29.4
+    - iostream.syn
+    - iostream.objects.overview
+    - narrow.stream.objects
+    - wide.stream.objects
+  - iostreams.base: #29.5
+    - ios.syn
+    - stream.types
+    - ios.base: #29.5.3
+      - ios.base.general
+      - ios.types: #29.5.3.2
+        - ios.failure
+        - ios.fmtflags
+        - ios.iostate
+        - ios.openmode
+        - ios.seekdir
+        - ios.init
+      - fmtflags.state #29.5.3.3
+      - ios.base.locales
+      - ios.members.static
+      - ios.base.storage
+      - ios.base.callback
+      - ios.base.cons
+    - fpos: #29.5.4
+      - fpos.members
+      - fpos.operations
+    - ios: #29.5.5
+      - ios.overview
+      - basic.ios.cons
+      - basic.ios.members
+      - iostate.flags
+    - std.ios.manip: #29.5.6
+      - fmtflags.manip
+      - adjustfield.manip
+      - basefield.manip
+      - floatfield.manip
+    - error.reporting #29.5.7
+  - stream.buffers: #29.6
+    - streambuf.syn
+    - streambuf.reqts
+    - streambuf: #29.6.3
+      - streambuf.general
+      - streambuf.cons
+      - streambuf.members: #29.6.3.3
+        - streambuf.locales
+        - streambuf.buffer
+        - streambuf.pub.get
+        - streambuf.pub.pback
+        - streambuf.pub.put
+      - streambuf.protected: #29.6.3.4
+        - streambuf.assign
+        - streambuf.get.area
+        - streambuf.put.area
+      - streambuf.virtuals: #29.6.3.5
+        - streambuf.virt.locales
+        - streambuf.virt.buffer
+        - streambuf.virt.get
+        - streambuf.virt.pback
+        - streambuf.virt.put
+  - iostream.format: #29.7
+    - istream.syn
+    - ostream.syn
+    - iomanip.syn
+    - input.streams: #29.7.4
+      - input.streams.general
+      - istream: #29.7.4.2
+        - istream.general
+        - istream.cons
+        - istream.assign
+        - istream.sentry
+      - istream.formatted: #29.7.4.3
+        - istream.formatted.reqmts
+        - istream.formatted.arithmetic
+        - istream.extractors
+      - istream.unformatted #29.7.4.4
+      - istream.manip
+      - istream.rvalue
+      - iostreamclass: #29.7.4.7
+        - iostreamclass.general
+        - iostream.cons
+        - iostream.dest
+        - iostream.assign
+    - output.streams: #29.7.5
+      - output.streams.general
+      - ostream: #29.7.5.2
+        - ostream.general
+        - ostream.cons
+        - ostream.assign
+        - ostream.sentry
+        - ostream.seeks
+      - ostream.formatted: #29.7.5.3
+        - ostream.formatted.reqmts
+        - ostream.inserters.arithmetic
+        - ostream.inserters
+        - ostream.inserters.character
+      - ostream.unformatted #29.7.5.4
+      - ostream.manip
+      - ostream.rvalue
+    - std.manip
+    - ext.manip
+    - quoted.manip
+  - string.streams: #29.8
+    - sstream.syn
+    - stringbuf: #29.8.2
+      - stringbuf.general
+      - stringbuf.cons
+      - stringbuf.assign
+      - stringbuf.members
+      - stringbuf.virtuals
+    - istringstream: #29.8.3
+      - istringstream.general
+      - istringstream.cons
+      - istringstream.assign
+      - istringstream.members
+    - ostringstream: #29.8.4
+      - ostringstream.general
+      - ostringstream.cons
+      - ostringstream.assign
+      - ostringstream.members
+    - stringstream: #29.8.5
+      - stringstream.general
+      - stringstream.cons
+      - stringstream.assign
+      - stringstream.members
+  - span.streams: #29.9
+    - span.streams.overview
+    - spanstream.syn
+    - spanbuf: #29.9.3
+      - spanbuf.general
+      - spanbuf.cons
+      - spanbuf.assign
+      - spanbuf.members
+      - spanbuf.virtuals
+    - ispanstream: #29.9.4
+      - ispanstream.general
+      - ispanstream.ctor
+      - ispanstream.assign
+      - ispanstream.members
+    - ospanstream: #29.9.5
+      - ospanstream.general
+      - ospanstream.ctor
+      - ospanstream.assign
+      - ospanstream.members
+    - spanstream: #29.9.6
+      - spanstream.general
+      - spanstream.ctor
+      - spanstream.assign
+      - spanstream.members
+  - file.streams: #29.10
+    - fstream.syn
+    - filebuf: #29.10.2
+      - filebuf.general
+      - filebuf.cons
+      - filebuf.assign
+      - filebuf.members
+      - filebuf.virtuals
+    - ifstream: #29.10.3
+      - ifstream.general
+      - ifstream.ctor
+      - ifstream.assign
+      - ifstream.members
+    - ofstream: #29.10.4
+      - ofstream.general
+      - ofstream.ctor
+      - ofstream.assign
+      - ofstream.members
+    - fstream: #29.10.5
+      - fstream.general
+      - fstream.ctor
+      - fstream.assign
+      - fstream.members
+  - syncstream: #29.11
+    - syncstream.syn
+    - syncstream.syncbuf: #29.11.2
+      - syncstream.syncbuf.overview
+      - syncstream.syncbuf.cons
+      - syncstream.syncbuf.assign
+      - syncstream.syncbuf.members
+      - syncstream.syncbuf.virtuals
+      - syncstream.syncbuf.special
+    - syncstream.osyncstream: #29.11.3
+      - syncstream.osyncstream.overview
+      - syncstream.osyncstream.cons
+      - syncstream.osyncstream.members
+  - filesystems: #29.12
+    - fs.general
+    - fs.conformance: #29.12.2
+      - fs.conformance.general
+      - fs.conform.9945
+      - fs.conform.os
+      - fs.race.behavior
+    - fs.req
+    - fs.filesystem.syn
+    - fs.err.report
+    - fs.class.path: #29.12.6
+      - fs.class.path.general
+      - fs.path.generic
+      - fs.path.cvt: #29.12.6.3
+        - fs.path.fmt.cvt
+        - fs.path.type.cvt
+      - fs.path.req
+      - fs.path.member: #29.12.6.5
+        - fs.path.construct
+        - fs.path.assign
+        - fs.path.append
+        - fs.path.concat
+        - fs.path.modifiers
+        - fs.path.native.obs
+        - fs.path.generic.obs
+        - fs.path.compare
+        - fs.path.decompose
+        - fs.path.query
+        - fs.path.gen #29.12.6.5.11
+      - fs.path.itr
+      - fs.path.io
+      - fs.path.nonmember
+    - fs.class.filesystem.error: #29.12.7
+      - fs.class.filesystem.error.general
+      - fs.filesystem.error.members
+    - fs.enum: #29.12.8
+      - fs.enum.path.format
+      - fs.enum.file.type
+      - fs.enum.copy.opts
+      - fs.enum.perms
+      - fs.enum.perm.opts
+      - fs.enum.dir.opts
+    - fs.class.file.status: #29.12.9
+      - fs.class.file.status.general
+      - fs.file.status.cons
+      - fs.file.status.obs
+      - fs.file.status.mods
+    - fs.class.directory.entry: #29.12.10
+      - fs.class.directory.entry.general
+      - fs.dir.entry.cons
+      - fs.dir.entry.mods
+      - fs.dir.entry.obs
+      - fs.dir.entry.io
+    - fs.class.directory.iterator: #29.12.11
+      - fs.class.directory.iterator.general
+      - fs.dir.itr.members
+      - fs.dir.itr.nonmembers
+    - fs.class.rec.dir.itr: #29.12.12
+      - fs.class.rec.dir.itr.general
+      - fs.rec.dir.itr.members
+      - fs.rec.dir.itr.nonmembers
+    - fs.op.funcs: #29.12.13
+      - fs.op.funcs.general
+      - fs.op.absolute
+      - fs.op.canonical
+      - fs.op.copy
+      - fs.op.copy.file
+      - fs.op.copy.symlink
+      - fs.op.create.directories
+      - fs.op.create.directory
+      - fs.op.create.dir.symlk
+      - fs.op.create.hard.lk #29.12.13.10
+      - fs.op.create.symlink
+      - fs.op.current.path
+      - fs.op.equivalent
+      - fs.op.exists
+      - fs.op.file.size
+      - fs.op.hard.lk.ct
+      - fs.op.is.block.file
+      - fs.op.is.char.file
+      - fs.op.is.directory
+      - fs.op.is.empty #29.12.13.20
+      - fs.op.is.fifo
+      - fs.op.is.other
+      - fs.op.is.regular.file
+      - fs.op.is.socket
+      - fs.op.is.symlink
+      - fs.op.last.write.time
+      - fs.op.permissions
+      - fs.op.proximate
+      - fs.op.read.symlink
+      - fs.op.relative #29.12.13.30
+      - fs.op.remove
+      - fs.op.remove.all
+      - fs.op.rename
+      - fs.op.resize.file
+      - fs.op.space
+      - fs.op.status
+      - fs.op.status.known
+      - fs.op.symlink.status
+      - fs.op.temp.dir.path
+      - fs.op.weakly.canonical #29.12.13.40
+  - c.files: #29.13
+    - cstdio.syn
+    - cinttypes.syn
+- re: #regex 30
+  - re.general
+  - re.req
+  - re.syn
+  - re.const: #30.4
+    - re.const.general
+    - re.synopt
+    - re.matchflag
+    - re.err
+  - re.badexp
+  - re.traits
+  - re.regex: #30.7
+    - re.regex.general
+    - re.regex.construct
+    - re.regex.assign
+    - re.regex.operations
+    - re.regex.locale
+    - re.regex.swap
+    - re.regex.nonmemb
+  - re.submatch: #30.8
+    - re.submatch.general
+    - re.submatch.members
+    - re.submatch.op
+  - re.results: #30.9
+    - re.results.general
+    - re.results.const
+    - re.results.state
+    - re.results.size
+    - re.results.acc
+    - re.results.form
+    - re.results.all
+    - re.results.swap
+    - re.results.nonmember
+  - re.alg: #30.10
+    - re.except
+    - re.alg.match
+    - re.alg.search
+    - re.alg.replace
+  - re.iter: #30.11
+    - re.regiter: #30.11.1
+      - re.regiter.general
+      - re.regiter.cnstr
+      - re.regiter.comp
+      - re.regiter.deref
+      - re.regiter.incr
+    - re.tokiter: #30.11.2
+      - re.tokiter.general
+      - re.tokiter.cnstr
+      - re.tokiter.comp
+      - re.tokiter.deref
+      - re.tokiter.incr
+  - re.grammar: #30.12
+- atomics: #atomics 31
+  - atomics.general
+  - atomics.syn
+  - atomics.alias
+  - atomics.order
+  - atomics.lockfree
+  - atomics.wait
+  - atomics.ref.generic: #31.7
+    - atomics.ref.generic.general
+    - atomics.ref.ops
+    - atomics.ref.int
+    - atomics.ref.float
+    - atomics.ref.pointer
+    - atomics.ref.memop
+  - atomics.types.generic: #31.8
+    - atomics.types.generic.general
+    - atomics.types.operations
+    - atomics.types.int
+    - atomics.types.float
+    - atomics.types.pointer
+    - atomics.types.memop
+    - util.smartptr.atomic: #31.8.7
+      - util.smartptr.atomic.general
+      - util.smartptr.atomic.shared
+      - util.smartptr.atomic.weak
+  - atomics.nonmembers
+  - atomics.flag
+  - atomics.fences
+  - stdatomic.h.syn
+- thread: #threads 32
+  - thread.general
+  - thread.req: #32.2
+    - thread.req.paramname
+    - thread.req.exception
+    - thread.req.native
+    - thread.req.timing
+    - thread.req.lockable: #32.2.5
+      - thread.req.lockable.general
+      - thread.req.lockable.basic
+      - thread.req.lockable.req
+      - thread.req.lockable.timed
+      - thread.req.lockable.shared
+      - thread.req.lockable.shared.timed
+  - thread.stoptoken: #32.3
+    - thread.stoptoken.intro
+    - thread.stoptoken.syn
+    - stoptoken: #32.3.3
+      - stoptoken.general
+      - stoptoken.cons
+      - stoptoken.mem
+      - stoptoken.nonmembers
+    - stopsource: #32.3.4
+      - stopsource.general
+      - stopsource.cons
+      - stopsource.mem
+      - stopsource.nonmembers
+    - stopcallback: #32.3.5
+      - stopcallback.general
+      - stopcallback.cons
+  - thread.threads: #32.4
+    - thread.threads.general
+    - thread.syn
+    - thread.thread.class: #32.4.3
+      - thread.thread.class.general
+      - thread.thread.id
+      - thread.thread.constr
+      - thread.thread.destr
+      - thread.thread.assign
+      - thread.thread.member
+      - thread.thread.static
+      - thread.thread.algorithm
+    - thread.jthread.class: #32.4.4
+      - thread.jthread.class.general
+      - thread.jthread.cons
+      - thread.jthread.mem
+      - thread.jthread.stop
+      - thread.jthread.special
+      - thread.jthread.static
+    - thread.thread.this
+  - thread.mutex: #32.5
+    - thread.mutex.general
+    - mutex.syn
+    - shared.mutex.syn
+    - thread.mutex.requirements: #32.5.4
+      - thread.mutex.requirements.general
+      - thread.mutex.requirements.mutex: #32.5.4.2
+        - thread.mutex.requirements.mutex.general
+        - thread.mutex.class
+        - thread.mutex.recursive
+      - thread.timedmutex.requirements: #32.5.4.3
+        - thread.timedmutex.requirements.general
+        - thread.timedmutex.class
+        - thread.timedmutex.recursive
+      - thread.sharedmutex.requirements: #32.5.4.4
+        - thread.sharedmutex.requirements.general
+        - thread.sharedmutex.class
+      - thread.sharedtimedmutex.requirements: #32.5.4.5
+        - thread.sharedtimedmutex.requirements.general
+        - thread.sharedtimedmutex.class
+    - thread.lock: #32.5.5
+      - thread.lock.general
+      - thread.lock.guard
+      - thread.lock.scoped
+      - thread.lock.unique: #32.5.5.4
+        - thread.lock.unique.general
+        - thread.lock.unique.cons
+        - thread.lock.unique.locking
+        - thread.lock.unique.mod
+        - thread.lock.unique.obs
+      - thread.lock.shared: #32.5.5.5
+        - thread.lock.shared.general
+        - thread.lock.shared.cons
+        - thread.lock.shared.locking
+        - thread.lock.shared.mod
+        - thread.lock.shared.obs
+    - thread.lock.algorithm
+    - thread.once: #32.5.7
+      - thread.once.onceflag
+      - thread.once.callonce
+  - thread.condition: #32.6
+    - thread.condition.general
+    - condition.variable.syn
+    - thread.condition.nonmember
+    - thread.condition.condvar
+    - thread.condition.condvarany: #32.6.5
+      - thread.condition.condvarany.general
+      - thread.condvarany.wait
+      - thread.condvarany.intwait
+  - thread.sema: #32.7
+    - thread.sema.general
+    - semaphore.syn
+    - thread.sema.cnt
+  - thread.coord: #32.8
+    - thread.coord.general
+    - thread.latch: #32.8.2
+      - thread.latch.general
+      - latch.syn
+      - thread.latch.class
+    - thread.barrier: #32.8.3
+      - thread.barrier.general
+      - barrier.syn
+      - thread.barrier.class
+  - futures: #32.9
+    - futures.overview
+    - future.syn
+    - futures.errors
+    - futures.future.error
+    - futures.state
+    - futures.promise
+    - futures.unique.future
+    - futures.shared.future
+    - futures.async
+    - futures.task: #32.9.10
+      - futures.task.general
+      - futures.task.members
+      - futures.task.nonmembers
+- gram: #grammar A
+  - gram.general
+  - gram.key
+  - gram.lex
+  - gram.basic
+  - gram.expr
+  - gram.stmt
+  - gram.dcl
+  - gram.module
+  - gram.class
+  - gram.over #A.10
+  - gram.temp
+  - gram.except
+  - gram.cpp
+- implimits: #limits B
+- diff: #compatibility C
+  - diff.cpp20: #C.1
+    - diff.cpp20.general
+    - diff.cpp20.lex
+    - diff.cpp20.utilities
+  - diff.cpp17: #C.2
+    - diff.cpp17.general
+    - diff.cpp17.lex
+    - diff.cpp17.basic
+    - diff.cpp17.expr
+    - diff.cpp17.dcl.dcl
+    - diff.cpp17.class
+    - diff.cpp17.over
+    - diff.cpp17.temp
+    - diff.cpp17.except
+    - diff.cpp17.library #C.2.10
+    - diff.cpp17.containers
+    - diff.cpp17.iterators
+    - diff.cpp17.alg.reqs
+    - diff.cpp17.input.output
+    - diff.cpp17.depr
+  - diff.cpp14: #C.3
+    - diff.cpp14.general
+    - diff.cpp14.lex
+    - diff.cpp14.expr
+    - diff.cpp14.dcl.dcl
+    - diff.cpp14.class
+    - diff.cpp14.temp
+    - diff.cpp14.except
+    - diff.cpp14.library
+    - diff.cpp14.utilities
+    - diff.cpp14.string #C.3.10
+    - diff.cpp14.containers
+    - diff.cpp14.depr
+  - diff.cpp11: #C.4
+    - diff.cpp11.general
+    - diff.cpp11.lex
+    - diff.cpp11.basic
+    - diff.cpp11.expr
+    - diff.cpp11.dcl.dcl
+    - diff.cpp11.library
+    - diff.cpp11.input.output
+  - diff.cpp03: #C.5
+    - diff.cpp03.general
+    - diff.cpp03.lex
+    - diff.cpp03.expr
+    - diff.cpp03.dcl.dcl
+    - diff.cpp03.class
+    - diff.cpp03.temp
+    - diff.cpp03.library
+    - diff.cpp03.language.support
+    - diff.cpp03.diagnostics
+    - diff.cpp03.utilities #C.5.10
+    - diff.cpp03.strings
+    - diff.cpp03.containers
+    - diff.cpp03.algorithms
+    - diff.cpp03.numerics
+    - diff.cpp03.input.output
+  - diff.iso: #C.6
+    - diff.iso.general
+    - diff.lex
+    - diff.basic
+    - diff.expr
+    - diff.stat
+    - diff.dcl
+    - diff.class
+    - diff.cpp
+  - diff.library: #C.7
+    - diff.library.general
+    - diff.mods.to.headers
+    - diff.mods.to.definitions: #C.7.3
+      - diff.char16
+      - diff.wchar.t
+      - diff.header.assert.h
+      - diff.header.iso646.h
+      - diff.header.stdalign.h
+      - diff.header.stdbool.h
+      - diff.null
+    - diff.mods.to.declarations
+    - diff.mods.to.behavior: #C.7.5
+      - diff.mods.to.behavior.general
+      - diff.offsetof
+      - diff.malloc
+- depr: #future D
+  - depr.general
+  - depr.arith.conv.enum
+  - depr.capture.this
+  - depr.comma.subscript
+  - depr.array.comp
+  - depr.volatile.type
+  - depr.static.constexpr
+  - depr.locale
+  - depr.impldec
+  - depr.template.template
+  - depr.c.headers: #D.11
+    - depr.c.headers.general
+    - depr.complex.h.syn
+    - depr.iso646.h.syn
+    - depr.stdalign.h.syn
+    - depr.stdbool.h.syn
+    - depr.tgmath.h.syn
+    - depr.c.headers.other
+  - depr.res.on.required
+  - depr.relops
+  - depr.str.streams: #D.14
+    - depr.strstream.syn
+    - depr.strstreambuf: #D.14.2
+      - depr.strstreambuf.general
+      - depr.strstreambuf.cons
+      - depr.ststreambuf.members
+      - depr.strstreambuf.virtuals
+    - depr.istrstream: #D.14.3
+      - depr.istrstream.general
+      - depr.istrstream.cons
+      - depr.istrstream.members
+    - depr.ostrstream: #D.14.4
+      - depr.ostrstream.general
+      - depr.ostrstream.cons
+      - depr.ostrstream.members
+    - depr.strstream: #D.14.5
+      - depr.strstream.general
+      - depr.strstream.cons
+      - depr.strstream.dest
+      - depr.strstream.oper
+  - depr.default.allocator: #D.15
+  - depr.mem.poly.allocator.mem
+  - depr.meta.types
+  - depr.tuple
+  - depr.variant
+  - depr.iterator
+  - depr.move.iter.elem
+  - depr.util.smartptr.shared.atomic
+  - depr.string.capacity
+  - depr.locale.stdcvt: #D.24
+    - depr.locale.stdcvt.general
+    - depr.codecvt.syn
+    - depr.locale.stdcvt.req
+  - depr.conversions: #D.25
+    - depr.conversions.general
+    - depr.conversions.string
+    - depr.conversions.buffer
+  - depr.locale.category
+  - depr.fs.path.factory
+  - depr.atomics: #D.28
+    - depr.atomics.general
+    - depr.atomics.volatile
+    - depr.atomics.nonmembers
+    - depr.atomics.types.operations
+    - depr.atomics.flag
+- uaxid: #uax31 E
+  - uaxid.general
+  - uaxid.def: #E.2
+    - uaxid.def.general
+    - uaxid.def.rfmt
+    - uaxid.def.stable
+  - uaxid.immutable
+  - uaxid.pattern
+  - uaxid.eqn
+  - uaxid.eqci
+  - uaxid.filter
+  - uaxid.filterci
+  - uaxid.hashtag
+
